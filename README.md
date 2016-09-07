@@ -9,7 +9,7 @@
 
 Governments and corporations are already listening, so why shouldn’t we? This new DIY Surveillance Kit enables everyone to spy on everyone. But unlike conventional eavesdroppers, we’ll listen to conversations and turn them into fun. Once assembled, simply point the parabolic microphone in the direction of the people you want to spy on, and watch as private conversations transform into real-time gifs on the device itself.
 
-In the wild and wonderful world of memes, gifs, cats, snaps, lazers and emojis, it’s easy to forget that what we do and share is being collected and distributed.
+In the wild and wonderful world of memes, gifs, cats, snaps, lazers and emojis, it’s easy to forget that what we do and share is being collected and distributed.
 
 ![](./images/spinning_kit.gif)
 
