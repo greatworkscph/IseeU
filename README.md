@@ -552,7 +552,7 @@ I used red color strokes for laser cut, and blue ones for engraving.
 
 ## Laser cut parts assembly
 
-Download the building guide from [here](https://gitlab.com/greatworkscph/iseeu/blob/master/building_manual.pdf) to assemble the parts together.
+Download the building guide from [here](./building_manual.pdf) to assemble the parts together.
 
 ## Usage
 
