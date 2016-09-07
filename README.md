@@ -34,10 +34,10 @@ The DIY surveillance kit is an art project designed to raise awareness of data c
 Before installing anything, we are gonna power up the Raspberry Pi through the GPIO pins.
 **Do not put the batteries in the battery holder yet, or you risk to fry the Raspberry Pi!**  
 ![](./images/power_bb.jpg)  
-Shorten the 3 pin connector with a Dremel or a cutter knife of the UBEC voltage converter to fit the PiTFT when it\s on top of the Raspberry Pi. 
-Solder 2 cables on the toggle switch. 
+Shorten the 3 pin connector with a Dremel or a cutter knife of the UBEC voltage converter to fit the PiTFT when it\s on top of the Raspberry Pi.
+Solder 2 cables on the toggle switch.
 Take the screw connector 3x2 pins, and connect the 2 wires from the toggle switch to it as described in the illustration above.  
-Then connect the UBEC converter to it, and connect the other side to the PiTFT between the Pins 2 and 6 black wire facing downwards.  <b>Beware Pins 2 and 4 are +5V (red wire on pin 4), pin 6 is Ground (GND).</b>  
+Then connect the UBEC converter to it, and connect the other side to the PiTFT between the Pins 2 and 6 black wire facing downwards. <b>Beware Pins 2 and 4 are +5V (red wire on pin 4), pin 6 is Ground (GND).</b>  
 Then connect the 8xAA battery holder to the screw connector.  
 Verify the toggle switch is in off position as on the picture below:  
 ![](./images/toggle_switch.png)
@@ -398,10 +398,10 @@ Apache install will create a folder www located at
 ```
 where http://localhost is pointing to when you type the localhost in a browser.
 
-Download and unzip the html files from gitlab
+Download and unzip the html files from github
 ```
 cd /var/www
-wget https://gitlab.com/greatworkscph/iseeu/blob/master/html_files.zip
+wget https://github.com/greatworkscph/IseeU/blob/master/html_files.zip
 unzip html_files.zip
 sudo rm html_files.zip
 ```
