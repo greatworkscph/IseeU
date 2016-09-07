@@ -1,4 +1,4 @@
-# IseeU DIY spy kit
+# The IseeU DIY spy kit
 
 ![](./images/header.jpg)
 
@@ -18,8 +18,51 @@ In the wild and wonderful world of memes, gifs, cats, snaps, lazers and emojis, 
 
 The DIY surveillance kit is an art project designed to raise awareness of data collection, privacy and transparency. Issues that will become even more important in the next 5-10 years as we continue to digitize every aspect of our lives.
 
-## Electronics - Bill of Materials
 
+# Table of contents
+
+
+* [Electronics - Bill of Materials](#electronics)
+
+* [Power supply wiring](#wiring)
+
+* [Installation](#installation)
+
+* [Easy setup](#easy)
+
+* [Advanced setup](#advanced)
+
+  * [Flash the SD card](#flashcard)
+
+  * [Connect to the Pi with SSH](#ssh)
+
+  * [Disable Wifi Power Management](#wifipm)
+
+  * [Install Matchbox Virtual keyboard](#virtualkeyboard)
+
+  * [Change desktop background (optional)](#background)
+
+  * [Remove the enormous wastebasket icon (optional)](#wastebasket)
+
+  * [Install Chromium & Apache Server](#chromium)
+
+  * [Install Apache server](#apache)
+
+  * [Setup the piTFT buttons](#pibuttons)
+
+  * [Configure autostart file](#autostart)
+
+  * [Configure audio](#audio)
+
+  * [Laser cutting](#lasercut)
+
+  * [Laser cut parts assembly](#buildingmanual)
+
+  * [Usage](#usage)
+
+<a name="electronics"/>
+# Electronics - Bill of Materials
+</a>
 * 1 Raspberry Pi 3 Model B 1Gb RAM ([http://www.adafruit.com/products/3055](http://www.adafruit.com/products/3055))  
 * 1 Micro SD card 8Gb or 16Gb ([http://dk.farnell.com/transcend/tsraspi10-16g/16gb-microsd-card-preloaded-with/dp/2521753](http://dk.farnell.com/transcend/tsraspi10-16g/16gb-microsd-card-preloaded-with/dp/2521753))  
 * 1 Adafruit PiTFT Plus Assembled 320x240 2.8" TFT + Resistive Touchscreen ([http://www.adafruit.com/products/2298](http://www.adafruit.com/products/2298))  
@@ -29,9 +72,9 @@ The DIY surveillance kit is an art project designed to raise awareness of data c
 * 1 toggle switch SPDT ON - ON or SPST, I found those ones in Denmark   [http://www.elextra.dk/main.aspx?page=article&artno=H12576](http://www.elextra.dk/main.aspx?page=article&artno=H12576),  beware if (ON) is in between parentheses it won’t hold the position (momentary position)
 * 1 common screw connector for 2,5 mm2 wire [http://www.elextra.dk/main.aspx?page=article&artno=H24146](http://www.elextra.dk/main.aspx?page=article&artno=H24146)
 
-
-## Power supply wiring
-
+<a name="power"/>
+# Power supply wiring
+</a>
 Before installing anything, we are gonna power up the Raspberry Pi through the GPIO pins.
 **Do not put the batteries in the battery holder yet, or you risk to fry the Raspberry Pi!**  
 ![](./images/power_bb.jpg)  
@@ -46,20 +89,20 @@ Once switch is off, put the AA batteries into the battery holder.
 
 You can now put the PiTFT on top of the Raspberry Pi, but don’t switch on the power yet, since we need to install the software.
 
-
+<a name="installation"/>
 # Installation
-
+</a>
 Raspberry Pi 3 is a business card size computer that works on Linux, Windows 10, or Chromium OS.
 Linux comes in lots of distributions, the one we use here is a customised version of Raspbian Jessie by Adafruit, to be able to use the PiTFT.
-
-## Easy setup
-
+<a name="easy"/>
+# Easy setup
+</a>
 Download the image zip from https://www.dropbox.com/s/r5fztyfvrww1xy2/diyspykit.zip?dl=1.
 
 Insert a blank the mini SD card with an adapter into a computer.
 Burn the image on a 16Gb SD card but a 8Gb would do as well.
 
-### on Mac OSX
+## on Mac OSX
 
 To do so, I used ApplePi-Baker ([http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/](http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/)) on Mac OS X to burn the image.
 
@@ -80,15 +123,17 @@ It should take about 25 minutes to burn the image.
 
 Once the image is burned, you can insert it in the mini SD card slot underneath the Raspberry Pi.
 
-### on Windows & Linux
+## on Windows & Linux
 
 The process is similar.
 Follow the instructions from this page: http://elinux.org/RPi_Easy_SD_Card_Setup
 
-## Advanced setup
-
-### Flash the SD card
-
+<a name="advanced"/>
+# Advanced setup
+</a>
+<a name="flashingcard"/>
+## Flash the SD card
+</a>
 Install The Jessie-based image from Adafruit PiTFT setup tutorial named
 Jessie-based PiTFT 2.4" and 2.8" Resistive Image for Pi 1, Pi 2 and Pi 3 (March 25, 2015), available here:
 https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/easy-install
@@ -99,18 +144,18 @@ Add the PiTFT Touchscreen on top of the Raspberry Pi
 Insert the SD card in the Raspberry pi slot.
 
 Boot up the Raspberry Pi
-
-### Connect to the Pi with SSH
-
+<a name="ssh"/>
+## Connect to the Pi with SSH
+</a>
 Connecting to the Pi with SSH makes it much easier to install the libraries needed to make our spy kit.
 
 For the first wifi setup, you will either need a usb keyboard, or
 
-#### without a USB keyboard
+### without a USB keyboard
 
 I recommend this tutorial you can follow from step number 3 http://blog.self.li/post/63281257339/raspberry-pi-part-1-basic-setup-without-cables
 
-#### with a USB keyboard
+### with a USB keyboard
 
 Plug a USB keyboard to the Pi.
  Click on the terminal icon on the top menu select your wifi network and fill in your password.
@@ -140,9 +185,9 @@ pi@raspberrypi:~ $
 
 if not, follow the steps described here:
 https://www.raspberrypi.org/documentation/remote-access/ssh/
-
+<a name="wifipm"/>
 ## Disable Wifi Power Management
-
+</a>
 I was experiencing drop outs on the wifi internet connection, it appeared that the internet chip was  turning itself off after an idle period.
 To maintain the wifi connection, we need to disable the wifi power management.
 
@@ -189,11 +234,9 @@ And check for the line:
 Power Management:off
 ```
 
-
-
-
+<a name="virtualkeyboard"/>
 ## Install Matchbox Virtual keyboard
-
+</a>
 Matchbox virtual keyboard allows writing directly on the touchscreen without the need of an external usb keyboard.
 With a instructions from the ozzmaker website (http://ozzmaker.com/virtual-keyboard-for-the-raspberry-pi/)
 I installed matchbox virtual keyboard
@@ -308,9 +351,9 @@ Plugin {
   }
 }
 ```
-
+<a name="background"/>
 ## Change desktop background (optional)
-
+</a>
 You can as well change the Desktop background in this file.
 Copy a desktop image to documents.
 You can do it from command line (CLI) with scp command, or by FTP using the ipaddress of the pi and the logins (pi/raspberry)
@@ -342,9 +385,9 @@ Global {
 }
 ```
 Then save and close (Ctrl+x Y Enter)
-
+<a name="wastebasket"/>
 ## Remove the enormous wastebasket icon (optional)
-
+</a>
 Edit the desktop items file
 ```
 nano .config/pcmanfm/LXDE-pi/desktop-items-0.conf
@@ -357,9 +400,9 @@ to
 ```
 show_trash=0
 ```
-
+<a name="chromium"/>
 ## Install Chromium & Apache Server
-
+</a>
 The IseeU application uses HTML5 Webkit Speech Recognition in Chromium, which acts the same as when you click on the microphone in google search input field.
 Since we don’t want to be prompt for microphone access, one way is to install a server and launch the app with localhost address.
 
@@ -386,9 +429,9 @@ We don t want to update the packages when we do an apt-get update, so we have to
 ```
 sudo apt-mark hold chromium-codecs-ffmpeg-extra chromium-browser chromium-browser-l10n
 ```
-
+<a name="apache"/>
 ## Install Apache server
-
+</a>
 This step is pretty straight forward
 ```
 sudo apt-get install apache2 -y
@@ -413,9 +456,9 @@ and type
 DISPLAY=:0.0 chromium-browser localhost
 ```
 Exit by typing ctrl+C
-
+<a name="pibuttons"/>
 ## Setup the piTFT buttons
-
+</a>
 Next we need to configure the PiTFT plus tactile switch
 and assign them functionalities
 ```
@@ -427,9 +470,9 @@ wget https://gitlab.com/greatworkscph/iseeu/blob/master/pitftgpio.py
 
 Here are the buttons configuration
 ![](./images/piTFT.gif)
-
+<a name="autostart"/>
 ## Configure autostart file
-
+</a>
 Next we gonna configure the lxsession autostart file.
 This will allow us to launch chromium fullscreen (kiosk mode) when the desktop start.
 ```
@@ -459,9 +502,9 @@ Then reboot the pi to test the buttons
 ```
 sudo reboot
 ```
-
+<a name="audio"/>
 ## Configure audio
-
+</a>
 Since the Raspberry pi doesn’t have any audio input, we need to plug in a usb audio sound card to the raspberry pi and set it up as default.
 
 Once the sound card is plugged in, you can see the cards by doing
@@ -544,19 +587,20 @@ alsamixer
 More information on Alsa
 http://blog.scphillips.com/posts/2013/01/sound-configuration-on-raspberry-pi-with-alsa/
 
-
+<a name="lasercut"/>
 ## Laser cutting
-
+</a>
 The diy kit was laser cut into 2mm thick tree cardboard boards.
 You can find the files ready to laser cut in the [lasercut folder](./lasercut).
 I used red color strokes for laser cut, and blue ones for engraving.
-
+<a name="buildingmanual"/>
 ## Laser cut parts assembly
-
+</a>
+![](.dyi_kit.gif)
 Download the building guide from [here](./building_manual.pdf) to assemble the parts together.
-
+<a name="usage"/>
 ## Usage
-
+</a>
 ### Shutting down the pi.
 
 Click once on the 3rd button from the top, the screen will go black and
