@@ -97,7 +97,7 @@ Linux comes in lots of distributions, the one we use here is a customised versio
 <a name="easy"/>
 # Easy setup
 </a>
-Download the image zip from https://www.dropbox.com/s/r5fztyfvrww1xy2/diyspykit.zip?dl=1.
+Download the image zip from http://bit.ly/2cSQjm2.
 
 Insert a blank the mini SD card with an adapter into a computer.
 Burn the image on a 16Gb SD card but a 8Gb would do as well.
