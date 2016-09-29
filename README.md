@@ -411,19 +411,35 @@ A nodejs web server would do as well, but I choose to go for an Apache server.
 Chromium browser is an open source project based on Chrome that integrates speech recognition as well.
 To know more about chromium browser [look here](https://www.chromium.org/Home)
 
-At the time I’m writing the chromium browser version is 54, but 50 was the one that worked best for me.
+Chromium needs Google speech API keys you can follow the instructions here to get them:
+[https://www.chromium.org/developers/how-tos/api-keys](https://www.chromium.org/developers/how-tos/api-keys)
 
-To install version 50 download the packages from launchpad (chromium dev repositories)
+Get the API keys and paste them at the end of the profile file:
 ```
-wget https://launchpad.net/~canonical-chromium-builds/+archive/ubuntu/stage/+build/9739240/+files/chromium-codecs-ffmpeg-extra_50.0.2661.102-0ubuntu0.14.04.1.1117_armhf.deb https://launchpad.net/~canonical-chromium-builds/+archive/ubuntu/stage/+build/9739240/+files/chromium-browser_50.0.2661.102-0ubuntu0.14.04.1.1117_armhf.deb http://launchpadlibrarian.net/259414466/chromium-browser-l10n_50.0.2661.102-0ubuntu0.14.04.1.1117_all.deb https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/8993250/+files/libgcrypt11_1.5.3-2ubuntu4.3_armhf.deb
+sudo nano ~/.profile
 ```
-
-Install the packages
+and paste:
 ```
-sudo dpkg -i libgcrypt11_1.5.3-2ubuntu4.3_armhf.deb
-sudo dpkg -i chromium-codecs-ffmpeg-extra_50.0.2661.102-0ubuntu0.14.04.1.1117_armhf.deb
-sudo dpkg -i chromium-browser_50.0.2661.102-0ubuntu0.14.04.1.1117_armhf.deb
-sudo dpkg -i chromium-browser-l10n_50.0.2661.102-0ubuntu0.14.04.1.1117_all.deb
+# Chromium API Keys
+export GOOGLE_API_KEY=your_api_key
+export GOOGLE_DEFAULT_CLIENT_ID=your_client_id
+export GOOGLE_DEFAULT_CLIENT_SECRET=your_client_secret
+```
+To install chromium browser version 52 download and install the dependencies first:
+```
+sudo apt-get install libpci3
+sudo apt-get install libspeechd2
+wget http://ftp.acc.umu.se/mirror/cdimage/snapshot/Debian/pool/main/libg/libgcrypt11/libgcrypt11_1.5.3-5_armhf.deb
+sudo dpkg -i libgcrypt11_1.5.3-5_armhf.deb
+```
+then download and install the packages from launchpad (chromium dev repositories)
+```
+wget http://launchpadlibrarian.net/280818189/chromium-browser-l10n_52.0.2743.116-0ubuntu0.16.04.1.1250_all.deb
+wget http://launchpadlibrarian.net/280845438/chromium-browser_52.0.2743.116-0ubuntu0.14.04.1.1134_armhf.deb
+wget http://launchpadlibrarian.net/280845440/chromium-codecs-ffmpeg-extra_52.0.2743.116-0ubuntu0.14.04.1.1134_armhf.deb
+sudo dpkg -i chromium-browser_52.0.2743.116-0ubuntu0.14.04.1.1134_armhf.deb
+sudo dpkg -i chromium-codecs-ffmpeg-extra_52.0.2743.116-0ubuntu0.14.04.1.1134_armhf.deb
+sudo dpkg -i chromium-browser-l10n_52.0.2743.116-0ubuntu0.16.04.1.1250_all.deb
 ```
 We don t want to update the packages when we do an apt-get update, so we have to block updates on chromium packages
 ```
