@@ -425,6 +425,10 @@ export GOOGLE_API_KEY=your_api_key
 export GOOGLE_DEFAULT_CLIENT_ID=your_client_id
 export GOOGLE_DEFAULT_CLIENT_SECRET=your_client_secret
 ```
+And exit nano
+Ctrl+x Y Enter
+
+
 To install chromium browser version 52 download and install the dependencies first:
 ```
 sudo apt-get install libpci3
