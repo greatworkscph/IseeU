@@ -97,7 +97,7 @@ Linux comes in lots of distributions, the one we use here is a customised versio
 <a name="easy"/>
 # Easy setup
 </a>
-Download the image zip from http://bit.ly/2cSQjm2.
+Download the image zip from http://bit.ly/2dp3b0V.
 
 Insert a blank the mini SD card with an adapter into a computer.
 Burn the image on a 16Gb SD card but a 8Gb would do as well.
