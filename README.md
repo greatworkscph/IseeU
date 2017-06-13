@@ -385,30 +385,10 @@ Global {
 }
 ```
 Then save and close (Ctrl+x Y Enter)
-<a name="wastebasket"/>
-## Remove the enormous wastebasket icon (optional)
+
+<a name="chromium"/>
+## Install Chromium & Apache Server
 </a>
-
-Edit the desktop items file
-
-```
-nano .config/pcmanfm/LXDE-pi/desktop-items-0.conf
-```
-
-And change
-
-```
-show_trash=1
-```
-
-to
-
-```
-show_trash=0
-```
-
-
-
 
 <a name="chromium"/>
 ## Install Chromium & Apache Server
